@@ -20,13 +20,12 @@ import { dirname } from 'node:path';
 import { fileURLToPath, URL } from 'node:url';
 import { HTTPResponse } from 'puppeteer';
 import { Input, ProxyRotation } from './consts.js';
+import WAE from 'web-auto-extractor';
 
 const SESSION_STORE_NAME = 'APIFY-PUPPETEER-SCRAPER-SESSION-STORE';
 
 const { META_KEY, DEFAULT_VIEWPORT, DEVTOOLS_TIMEOUT_SECS, SESSION_MAX_USAGE_COUNTS } = scraperToolsConstants;
 const SCHEMA = JSON.parse(await readFile(new URL('../../INPUT_SCHEMA.json', import.meta.url), 'utf8'));
-
-const WAE = require('web-auto-extractor').default;
 
 /**
  * Holds all the information necessary for constructing a crawler
