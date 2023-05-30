@@ -26,7 +26,7 @@ const SESSION_STORE_NAME = 'APIFY-PUPPETEER-SCRAPER-SESSION-STORE';
 const { META_KEY, DEFAULT_VIEWPORT, DEVTOOLS_TIMEOUT_SECS, SESSION_MAX_USAGE_COUNTS } = scraperToolsConstants;
 const SCHEMA = JSON.parse(await readFile(new URL('../../INPUT_SCHEMA.json', import.meta.url), 'utf8'));
 
-import $RefParser from '@apidevtools/json-schema-ref-parser';
+import WAE from 'web-auto-extractor';
 
 /**
  * Holds all the information necessary for constructing a crawler
@@ -313,7 +313,7 @@ export class CrawlerSetup implements CrawlerSetupOptions {
         /**
          * USER FUNCTION INVOCATION
          */
-        const pageFunctionResult = await this.evaledPageFunction(context, $RefParser);
+        const pageFunctionResult = await this.evaledPageFunction(context, WAE);
 
         /**
          * POST-PROCESSING
