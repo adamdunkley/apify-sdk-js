@@ -8,14 +8,14 @@
         "@apify/scraper-tools": "^1.1.1",
         "@crawlee/puppeteer": "^3.1.0",
         "apify": "^3.1.1",
-        "puppeteer": "*"
+        "puppeteer": "*",
+        "@apidevtools/json-schema-ref-parser": "^10.1.0"
     },
     "devDependencies": {
         "@apify/tsconfig": "^0.1.0",
         "@types/node": "^18.7.18",
         "ts-node": "^10.9.1",
-        "typescript": "~5.0.0",
-        "@apidevtools/json-schema-ref-parser": "^10.1.0"
+        "typescript": "~5.0.0"
     },
     "scripts": {
         "start": "npm run start:dev",
