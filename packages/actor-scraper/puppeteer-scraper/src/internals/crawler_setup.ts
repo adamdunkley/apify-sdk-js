@@ -1,3 +1,4 @@
+///<reference path="crawler_setup.d.ts" />
 import { browserTools, constants as scraperToolsConstants, CrawlerSetupOptions, createContext, RequestMetadata, tools } from '@apify/scraper-tools';
 import { Actor, ApifyEnv } from 'apify';
 import {
