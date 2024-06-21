@@ -1,3 +1,4 @@
+///<reference path="crawler_setup.d.ts" />
 import { browserTools, constants as scraperToolsConstants, CrawlerSetupOptions, createContext, RequestMetadata, tools } from '@apify/scraper-tools';
 import { Actor, ApifyEnv } from 'apify';
 import {
@@ -20,6 +21,7 @@ import { dirname } from 'node:path';
 import { fileURLToPath, URL } from 'node:url';
 import { HTTPResponse } from 'puppeteer';
 import { Input, ProxyRotation } from './consts.js';
+import WAE from 'web-auto-extractor';
 
 const SESSION_STORE_NAME = 'APIFY-PUPPETEER-SCRAPER-SESSION-STORE';
 
@@ -311,7 +313,7 @@ export class CrawlerSetup implements CrawlerSetupOptions {
         /**
          * USER FUNCTION INVOCATION
          */
-        const pageFunctionResult = await this.evaledPageFunction(context);
+        const pageFunctionResult = await this.evaledPageFunction(context, WAE);
 
         /**
          * POST-PROCESSING
